@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ultimate Memory Game</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Ultimate Memory Game</h1>
+  </header>
+
+  <div id="hud">
+    <span id="playerNameDisplay"></span>
+    <span id="level">Level: 1</span>
+    <span id="moves">Moves: 0</span>
+    <span id="time">Time: 0s</span>
+    <button id="leaderboardBtn">🏆</button>
+    <button id="settingsBtn">⚙️</button>
+  </div>
+
+  <div id="rewardBanner" style="display:none;">🎁 Daily Reward Collected: +3 Stars!</div>
+
+  <main id="game" tabindex="0"></main>
+
+  <div id="winOverlay" class="overlay" style="display:none;">
+    <div class="box">
+      <h2>🎉 Level Complete! 🎉</h2>
+      <p id="results"></p>
+      <button id="submitScoreBtn">Submit Score 🌍</button>
+      <button id="nextLevelBtn">Next Level ▶</button>
+    </div>
+  </div>
+
+  <div id="settingsPopup" class="overlay" style="display:none;">
+    <div class="box">
+      <h2>Settings</h2>
+      <label>Theme:
+        <select id="theme">
+          <option>Light</option>
+          <option>Dark</option>
+          <option>Neon</option>
+          <option>Galaxy</option>
+          <option>Pixel</option>
+          <option>Candy Pop</option>
+        </select>
+      </label>
+      <label>Country:
+        <select id="country">
+          <option value="🇺🇸">🇺🇸 USA</option>
+          <option value="🇬🇭">🇬🇭 Ghana</option>
+          <option value="🇬🇧">🇬🇧 UK</option>
+          <option value="🇳🇬">🇳🇬 Nigeria</option>
+          <option value="🌍">🌍 Other</option>
+        </select>
+      </label>
+      <div style="margin-top:10px;">
+        <button id="saveSettings">Save</button>
+        <button id="closeSettings">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="leaderboardPopup" class="overlay" style="display:none;">
+    <div class="box">
+      <h2>🏆 Global Leaderboard</h2>
+      <ul id="leaderboardList"></ul>
+      <h3 id="rankDisplay"></h3>
+      <button id="closeLeaderboard">Close</button>
+    </div>
+  </div>
+
+  <!-- Firebase + app scripts as modules -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
